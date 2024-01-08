@@ -11,6 +11,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import pages.LoginPage;
 
+import static com.report.ExtentReportManager.getTest;
+import static com.report.ExtentReportManager.startTest;
+
 public class LoginStepDefinitions {
 
     private WebDriver driver;
@@ -19,6 +22,10 @@ public class LoginStepDefinitions {
     @Before
     public void setup(){
         driver = new ChromeDriver();
+
+        startTest("Open Cart login Page Features" , "Testing the Cucumber Selenium Integration") ;
+        getTest().assignCategory("Sanity").assignAuthor("Kumar Jitendra").assignDevice("Windows OS") ;
+
     }
 
     @After
